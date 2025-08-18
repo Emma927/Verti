@@ -1,0 +1,105 @@
+@use "../settings/variables" as vars;
+@use "../tools/_mixins" as bp;
+
+body {
+  font-family: "Open Sans", serif;
+  background-color: #E4E4E4;
+  color: vars.$main-text;
+}
+
+.container {
+  max-width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+
+  @each $size, $width in bp.$breakpoints {
+    @include bp.respond($size) {
+      max-width: $width;
+    }
+  }
+}
+
+.btn {
+  padding: 14px 35px;
+  background-color: vars.$accent-color;
+  text-decoration: none;
+  color: white;
+  border-radius: 6px;
+  font-weight: 800;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  appearance: none;
+  cursor: pointer;
+  font-family: "Open Sans", serif;
+
+  &:hover {
+    background-color: #10a0d5;
+    transition: 0.2s all;
+  }
+
+  @include bp.respond(lg) {
+    flex-direction: row-reverse;
+  }
+
+  &--large {
+    font-size: 18px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+
+    @include bp.respond(lg) {
+      font-size: 33px;
+      padding: 26px 29px;
+    }
+
+    @include bp.respond(xl) {
+      font-size: 39px;
+      padding: 31px 35px;
+    }
+
+    i {
+      margin-right: 10px;
+    }
+  }
+
+  &--secondary {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: inherit;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.085);
+    }
+  }
+
+  @include bp.respond(lg) {
+    justify-content: space-between;
+  }
+}
+
+.title {
+  font-size: 18px;
+  color: vars.$main-text;
+  font-weight: 800;
+}
+
+.description {
+  font-size: 15px;
+  line-height: 29px;
+  color: vars.$light-text;
+  font-weight: 300;
+
+  &:first-of-type {
+    padding-bottom: 5px;
+  }
+
+  @include bp.respond(lg) {
+    font-size: 17px;
+    line-height: 39px;
+
+    &:first-of-type {
+      padding-bottom: 35px;
+    }
+  }
+}

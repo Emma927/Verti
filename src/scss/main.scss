@@ -1,0 +1,14 @@
+// Kolejność importów wg ITCSS
+// SETTINGS
+@use "settings/variables";
+// TOOLS
+@use "tools/mixins";
+// GENERIC
+@use "generic/reset";
+@use "generic/global";
+// COMPONENTS
+@use "components/header";
+@use "components/banner";
+@use "components/articles";
+@use "components/about";
+@use "components/footer";

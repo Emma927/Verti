@@ -1,0 +1,23 @@
+@use "sass:map";
+
+// Definicja breakpointów
+$breakpoints: (
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px,
+        xxl: 1400px
+);
+
+// Mixin dla media queries dynamicznie
+@mixin respond($size) {
+  $width: map.get($breakpoints, $size);
+
+  @if $width {
+    @media (min-width: $width) {
+      @content;
+    }
+  } @else {
+    @warn "No breakpoint defined for: #{$size}";
+  }
+}

@@ -1,0 +1,181 @@
+@use "../settings/variables" as vars;
+@use "../tools/_mixins" as bp;
+
+.header {
+  padding-top: 44px;
+  padding-bottom: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include bp.respond(lg) {
+    justify-content: space-between;
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+
+  .hamburger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+    border-radius: 6px;
+    line-height: 38px;
+    font-size: 20px;
+    width: 58px;
+    height: 38px;
+    cursor: pointer;
+
+    @include bp.respond(lg) {
+      display: none;
+    }
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 12px;
+
+    @include bp.respond(lg) {
+      flex-direction: row;
+      gap: 20px;
+    }
+
+    &__title {
+      padding: 4px 12px;
+      background-color: #FC4887;
+      border-radius: 6px;
+      font-family: "Oleo Script", system-ui;
+      font-size: 40px;
+      font-weight: 400;
+      letter-spacing: 2px;
+      line-height: 40px;
+
+      @include bp.respond(lg) {
+        font-size: 48px;
+        line-height: 33px;
+        letter-spacing: 2.5px;
+        padding: 10px 12px;
+      }
+
+      @include bp.respond(xl) {
+        font-size: 56px;
+        line-height: 56px;
+      }
+    }
+
+    &__link {
+      text-decoration: none;
+      color: white;
+    }
+
+    span {
+      font-weight: 800;
+      letter-spacing: 0.39px;
+      color: vars.$light-text;
+      padding: 4px 12px;
+      font-size: 13px;
+
+      @include bp.respond(xl) {
+        font-size: inherit;
+      }
+    }
+  }
+
+  .nav {
+    &__toggle {
+      display: none;
+
+      &:checked + .hamburger + .logo + .nav__bar {
+        display: flex;
+      }
+    }
+
+    &__bar {
+      display: none;
+      position: fixed;
+      top: 60px;
+      left: 15px;
+      min-width: 300px;
+      background-color: rgba(223, 217, 217, 0.97);
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 0;
+      z-index: 1000;
+      height: auto;
+      border-radius: 8px;
+      font-size: 13px;
+
+      @include bp.respond(lg) {
+        position: static;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: transparent;
+        padding: 0;
+      }
+
+      @include bp.respond(xl) {
+        font-size: inherit;
+      }
+    }
+
+    &__menu {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 100%;
+
+      @include bp.respond(lg) {
+        flex-direction: row;
+        gap: 20px;
+        width: auto;
+        height: 100%;
+      }
+    }
+
+    &__elem {
+      width: 100%;
+      text-align: center;
+
+      @include bp.respond(lg) {
+        height: 100%;
+        width: auto;
+      }
+
+      &:first-child {
+        .nav__link {
+          background-color: vars.$main-text;
+          color: white;
+        }
+      }
+    }
+
+    &__link {
+      text-decoration: none;
+      color: vars.$light-text;
+      font-weight: 800;
+      height: auto;
+      display: block;
+      padding: 10px;
+      border-radius: 6px;
+      transition: background-color .25s ease-in-out;
+
+      &:hover {
+        background-color: white;
+      }
+
+      @include bp.respond(lg) {
+        padding: 8px 16px;
+        height: 100%;
+      }
+    }
+  }
+}

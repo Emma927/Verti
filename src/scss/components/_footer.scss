@@ -1,0 +1,214 @@
+@use "../settings/variables" as vars;
+@use "../tools/_mixins" as bp;
+
+.footer {
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  @include bp.respond(md) {
+    padding: 88px 30px 56px;
+  }
+
+  @include bp.respond(lg) {
+    padding: 104px 10.5px 139px;
+  }
+
+  &__articles {
+    padding-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+
+    @include bp.respond(md) {
+      padding-bottom: 50px;
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+
+    @include bp.respond(xl) {
+      padding-bottom: 70px;
+      gap: 25px;
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__article {
+    width: 100%;
+    padding-bottom: 44px;
+    padding-top: 44px;
+    border-bottom: 1px solid rgba(105, 105, 105, 0.4);
+
+    &:first-of-type {
+      padding-top: 0;
+      padding-bottom: 44px;
+    }
+
+    &:nth-of-type(2) {
+      padding-bottom: 44px;
+    }
+
+    @include bp.respond(md) {
+      width: calc(50% - 12.5px);
+      border: none;
+      padding-top: 0;
+
+      &:first-of-type,
+      &:nth-of-type(2) {
+        padding-bottom: 70px;
+      }
+    }
+
+    @include bp.respond(xl) {
+      width: 25%;
+      padding: 0;
+    }
+  }
+
+  &__title {
+    font-size: 17px;
+    font-weight: 800;
+    margin-bottom: 17px;
+
+    @include bp.respond(lg) {
+      font-size: 23px;
+      margin-bottom: 23px;
+    }
+  }
+
+  .menu {
+    &__elem:not(:last-of-type) .menu__link {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    &__link {
+      color: vars.$light-text;
+      line-height: 29px;
+      font-size: 15px;
+      display: block;
+
+      @include bp.respond(md) {
+        line-height: 33px;
+      }
+
+      @include bp.respond(lg) {
+        font-size: 16px;
+        line-height: 39px;
+      }
+    }
+  }
+
+  &__contact {
+
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 22px;
+    width: 100%;
+
+    @include bp.respond(lg) {
+      padding-bottom: 30px;
+      flex-wrap: nowrap;
+      width: auto;
+    }
+
+    &-elem {
+      margin-right: 10px;
+      margin-bottom: 10px;
+
+      @include bp.respond(lg) {
+        margin-bottom: 0;
+      }
+    }
+
+    &-link {
+      display: block;
+      text-decoration: none;
+      padding: 7px;
+      background-color: vars.$light-text;
+      border-radius: 7px;
+      color: white;
+
+      &:hover {
+        transition: 0.3s all;
+        background-color: rgb(156, 148, 148, 0.8);
+      }
+    }
+
+    .fab {
+      font-size: 1.5em;
+    }
+  }
+
+  &__address {
+    line-height: 29px;
+    color: vars.$light-text;
+    font-size: 15px;
+
+    @include bp.respond(md) {
+      line-height: 33px;
+    }
+
+    @include bp.respond(lg) {
+      font-size: 17px;
+      line-height: 39px;
+    }
+  }
+
+  &--last {
+    margin-bottom: 30px;
+
+    @include bp.respond(lg) {
+      margin-bottom: 39px;
+    }
+  }
+
+  &__copyright {
+    display: flex;
+    flex-direction: column;
+
+    @include bp.respond(md) {
+      align-items: center;
+    }
+
+    @include bp.respond(lg) {
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    &-elem {
+      padding: 0;
+      color: #aaa;
+      line-height: 29px;
+      font-size: 15px;
+
+      &:first-of-type {
+        padding-left: 0;
+      }
+
+      &:last-of-type {
+        padding-right: 0;
+        border-right: none;
+      }
+
+      a {
+        color: #aaa;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+
+      @include bp.respond(md) {
+        border-right: none;
+        font-size: 17px;
+        line-height: 33px;
+      }
+
+      @include bp.respond(lg) {
+        padding: 0 13px;
+        line-height: 39px;
+        border-right: 1px solid rgba(192, 192, 192, 0.7);
+      }
+    }
+  }
+}

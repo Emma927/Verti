@@ -1,0 +1,52 @@
+@use "../settings/variables" as vars;
+@use "../tools/_mixins" as bp;
+
+.articles {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: 1fr;
+  padding-top: 20px;
+  padding-bottom: 40px;
+
+  @include bp.respond(lg) {
+    grid-template-columns: repeat(3, 1fr);
+    padding-top: 52px;
+    padding-bottom: 52px;
+  }
+
+  .article {
+    &__container {
+      background-color: white;
+      border-radius: 6px;
+      box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.05);
+    }
+
+    &__img {
+      width: 100%;
+      display: block;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+      object-fit: cover;
+    }
+
+    &__text {
+      padding: 30px 15px;
+
+      @include bp.respond(lg) {
+        padding: 70px 35px 52px;
+      }
+    }
+
+    &__title {
+      font-size: 20px;
+      line-height: 23px;
+      font-weight: 800;
+      margin-bottom: 5px;
+
+      @media screeen and (max-width: 980px) {
+        font-size: 23px;
+        margin-bottom: 6px;
+      }
+    }
+  }
+}

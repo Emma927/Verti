@@ -5,7 +5,7 @@ import { imagetools } from 'vite-imagetools'; // Wtyczka pozwala na automatycznÄ
 /**
  * Path to verti
  */
-const vertiPath = "";
+const vertiPath = ".";
 
 /**
  * Don't change those lines below

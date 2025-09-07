@@ -38,14 +38,14 @@
     }
 
     &__title {
-      font-size: 20px;
+      font-size: 23px;
       line-height: 23px;
       font-weight: 800;
-      margin-bottom: 5px;
+      margin-bottom: 6px;
 
-      @media screeen and (max-width: 980px) {
-        font-size: 23px;
-        margin-bottom: 6px;
+      @include bp.respond(lg) {
+        font-size: 20px;
+        margin-bottom: 5px;
       }
     }
   }

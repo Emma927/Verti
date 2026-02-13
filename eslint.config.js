@@ -4,15 +4,15 @@ import { defineConfig, globalIgnores } from 'eslint/config';
 export default defineConfig([
   globalIgnores(['dist', 'node_modules']),
   {
-    files: ['**/*.js'], // sprawdzamy wszystkie pliki JS
-    extends: [js.configs.recommended, 'prettier'], // reguły ESLint + Prettier
+    files: ['**/*.js'], // check all JS files
+    extends: [js.configs.recommended, 'prettier'], // ESLint rules + Prettier
     languageOptions: {
       ecmaVersion: 'latest',
-      sourceType: 'module', // obsługa import/export
+      sourceType: 'module', // support for import/export
     },
     rules: {
-      'no-unused-vars': ['warn', { varsIgnorePattern: '^[A-Z_]' }], // ostrzeżenie dla nieużywanych zmiennych
-      'no-console': 'off', // pozwala używać console.log
+      'no-unused-vars': ['warn', { varsIgnorePattern: '^[A-Z_]' }], // warning for unused variables
+      'no-console': 'off', // allow using console.log
     },
   },
 ]);

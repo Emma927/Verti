@@ -1,6 +1,6 @@
-//PostCSS to narzędzie do przetwarzania CSS, które pozwala na użycie różnych wtyczek do modyfikacji kodu CSS. postcss.config.js jest miejscem, gdzie definiuje się, jakie wtyczki mają być używane i jakie mają mieć ustawienia.
+// PostCSS is a tool for processing CSS that allows the use of various plugins to modify CSS code. postcss.config.js is where you define which plugins to use and their settings.
 export default {
   plugins: {
-    autoprefixer: {}, // pusty obiekt {} w konfiguracji Autoprefixera oznacza, że używa się domyślnych ustawień dla tej wtyczki.
+    autoprefixer: {}, // an empty {} in Autoprefixer configuration means it uses the plugin's default settings
   },
 };

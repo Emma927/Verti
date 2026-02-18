@@ -15,15 +15,13 @@ is a one-page website built entirely from scratch, based on a layout designed in
 
 Below are example screenshots of the Verti app on desktop and mobile devices.
 
-<div style="display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 10px; margin-bottom: 40px">
-  <img src="src/screenshots/desktop-view1.png" alt="Desktop view" style="margin-right: 10px;">
-  <img src="src/screenshots/mobile-view1.png" alt="Mobile view">
-</div>
+### View 1
+![Mobile view 1](src/screenshots/mobile-view1.png)
+![Desktop view 1](src/screenshots/desktop-view1.png)
 
-<div style="display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 10px; margin-bottom: 40px">
-  <img src="src/screenshots/desktop-view2.png" alt="Desktop view" style="margin-right: 10px;">
-  <img src="src/screenshots/mobile-view2.png" alt="Mobile view">
-</div>
+### View 2
+![Mobile view 2](src/screenshots/mobile-view2.png)
+![Desktop view 2](src/screenshots/desktop-view2.png)
 
 ## 🛠️ Technologies
 

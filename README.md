@@ -13,7 +13,7 @@ is a one-page website built entirely from scratch, based on a layout designed in
 
 ## 📸 Screenshots
 
-Below are example screenshots of the Verti app on desktop and mobile devices.
+Below are example screenshots of the Verti app on mobile and dektop devices.
 
 ### View 1
 ![Mobile view 1](src/screenshots/mobile-view1.png)

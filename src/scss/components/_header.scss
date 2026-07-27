@@ -1,5 +1,5 @@
-@use "../settings/variables" as vars;
-@use "../tools/_mixins" as bp;
+@use '../settings/variables' as vars;
+@use '../tools/mixins' as bp;
 
 .header {
   padding-top: 44px;
@@ -19,6 +19,7 @@
     justify-content: center;
     align-items: center;
     position: fixed;
+    z-index: 3;
     top: 15px;
     left: 15px;
     border: none;
@@ -36,6 +37,18 @@
     }
   }
 
+  .overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+  }
+
+  .icon-close {
+    display: none;
+  }
+
   .logo {
     display: flex;
     align-items: center;
@@ -49,9 +62,9 @@
 
     &__title {
       padding: 4px 12px;
-      background-color: #FC4887;
+      background-color: #fc4887;
       border-radius: 6px;
-      font-family: "Oleo Script", system-ui;
+      font-family: 'Oleo Script', system-ui;
       font-size: 40px;
       font-weight: 400;
       letter-spacing: 2px;
@@ -92,8 +105,30 @@
     &__toggle {
       display: none;
 
-      &:checked + .hamburger + .logo + .nav__bar {
+      &:checked ~ .nav__bar {
         display: flex;
+      }
+
+      &:checked + .hamburger {
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      &:checked + .hamburger .icon-menu {
+        display: none;
+      }
+
+      &:checked + .hamburger .icon-close {
+        display: block;
+      }
+
+      &:checked ~ .overlay {
+        display: block;
+      }
+
+      @include bp.respond(lg) {
+        &:checked ~ .overlay {
+          display: none;
+        }
       }
     }
 
@@ -101,14 +136,14 @@
       display: none;
       position: fixed;
       top: 60px;
-      left: 15px;
+      left: 0;
       min-width: 300px;
       background-color: rgba(223, 217, 217, 0.97);
       flex-direction: column;
       align-items: center;
       padding: 20px 0;
-      z-index: 1000;
-      height: auto;
+      z-index: 2;
+      height: calc(100vh - 60px);
       border-radius: 8px;
       font-size: 13px;
 
@@ -166,7 +201,7 @@
       display: block;
       padding: 10px;
       border-radius: 6px;
-      transition: background-color .25s ease-in-out;
+      transition: background-color 0.25s ease-in-out;
 
       &:hover {
         background-color: white;
